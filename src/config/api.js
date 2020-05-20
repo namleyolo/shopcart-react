@@ -1,0 +1,1 @@
+export const api = "http://domainforoffer.com/get-products"
