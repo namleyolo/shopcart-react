@@ -1,8 +1,8 @@
 import React from 'react'
-import logo from './../../assets/images/logo.png'
+import logo from './../../assets/images/logo.svg'
 
 
-export default function Header() {
+const Header = () =>{
     return (
         <div>
             <div id="header">
@@ -18,7 +18,7 @@ export default function Header() {
                     </form>
                 </div>
                 <div id="cart" className="col-lg-3 col-md-3 col-sm-12">
-                    <a className="mt-4 mr-2" href="#">giỏ hàng</a><span className="mt-3">8</span>
+                    <a className="mt-4 mr-2" href="#">Giỏ hàng</a><span className="mt-3">8</span>
                 </div>
                 </div>
             </div>
@@ -29,3 +29,5 @@ export default function Header() {
         </div>
     )
 }
+
+export default React.memo(Header) ;
