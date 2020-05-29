@@ -7,9 +7,11 @@ import {createStore} from "redux" ;
 import {Provider} from "react-redux" ;
 import rootReducer from "./redux/reducers/rootReducer"
 import { BrowserRouter } from 'react-router-dom'
+import {composeWithDevTools} from 'redux-devtools-extension';
+import index from "./redux/reducers";
 
 
-const store = createStore(rootReducer)
+const store = createStore(index, composeWithDevTools())
 
 ReactDOM.render(
   <React.StrictMode>

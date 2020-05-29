@@ -17,8 +17,8 @@ export default function Product() {
                     console.log(err)
             });
             setLoading(false)
-            console.log(result.data.data)
-            setData(result.data.data)
+            // console.log(result.data.data)
+            // setData(result.data.data)
 
         };
         fetchData();

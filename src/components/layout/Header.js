@@ -1,20 +1,28 @@
-import React from 'react'
-import logo from './../../assets/images/logo.svg'
+import React, {useState} from 'react'
+// import logo from './../../assets/images/logo.svg'
+import {withRouter} from 'react-router-dom'
 
-
-const Header = () =>{
+const Header = (props) => {
+    const [keyword, setKeyword] = useState("")
+    const handleSubmitSearch = (e) => {
+        e.preventDefault()
+        const history = props.history
+        history.push({pathname: "/search", search: `name=${keyword}`})
+    }
     return (
         <div>
             <div id="header">
             <div className="container">
                 <div className="row">
                 <div id="logo" className="col-lg-3 col-md-3 col-sm-12">
-                    <h1><a href="#"><img className="img-fluid" src={logo} alt="logo"/></a></h1>
+                    {/*<h1><a href="#"><img className="img-fluid"  alt="logo"/></a></h1>*/}
                 </div>
                 <div id="search" className="col-lg-6 col-md-6 col-sm-12">
-                    <form className="form-inline">
-                    <input className="form-control mt-3" type="search" placeholder="Tìm kiếm" aria-label="Search" />
-                    <button className="btn btn-danger mt-3" type="submit">Tìm kiếm</button>
+                    <form className="form-inline" onSubmit={handleSubmitSearch}>
+                        <input className="form-control mt-3" type="search" placeholder="Tìm kiếm" aria-label="Search"
+                               value={keyword}
+                               onChange={(e) => setKeyword(e.target.value)}/>
+                        <button className="btn btn-danger mt-3" type="submit">Tìm kiếm</button>
                     </form>
                 </div>
                 <div id="cart" className="col-lg-3 col-md-3 col-sm-12">
@@ -30,4 +38,4 @@ const Header = () =>{
     )
 }
 
-export default React.memo(Header) ;
+export default withRouter(Header);

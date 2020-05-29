@@ -14,10 +14,12 @@ import './assets/product.css'
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import Sidebar from './components/layout/Sidebar';
-import Test from './components/layout/Test';
 import Slide from './components/layout/Slide';
 import Product from './components/layout/Products/Product';
 import ProductDetail from './components/layout/Products/ProductDetail';
+import Search from "./components/layout/Search";
+import Menu from "./components/layout/Menu";
+import CategoriesDetail from "./components/layout/Categories/CategoriesDetail";
 
 function App() {
   // const counter = useSelector(state => state.counter);
@@ -27,6 +29,8 @@ function App() {
       <Switch>
           {/*<Route exact path='/'  />*/}
           <Route exact path='/product/:id' component={ProductDetail}/>
+          <Route exact path='/search' component={Search}/>
+          <Route exact path='/categories/:id' component={CategoriesDetail}/>
           <div className="App">
              <Header></Header>
                  {/*<h1>{counter}</h1>*/}
@@ -35,15 +39,16 @@ function App() {
                <div className="container">
            <div className="row">
              <div id="main" className="col-lg-8 col-md-12 col-sm-12">
-                 {/*<Slide></Slide>*/}
-                 <Test></Test>
-                 {/*<Product></Product>*/}
+                 <Menu/>
+                 <Slide></Slide>
+                 {/*<Test></Test>*/}
+                 <Product></Product>
              </div>
-                 {/*<Sidebar></Sidebar>*/}
+               <Sidebar></Sidebar>
 
            </div>
         </div>
-              {/*<Footer></Footer>*/}
+              <Footer></Footer>
            </div>
       </Switch>
 

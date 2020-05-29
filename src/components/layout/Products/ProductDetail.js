@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useState, useCallback} from 'react'
 import axios from "axios";
 import { useForm } from "react-hook-form";
 
@@ -14,8 +14,8 @@ export default function ProductDetail(props) {
     const dispatch = useDispatch();
 
 
-    useEffect(() => {
-        const fetchData = async () => {
+    useEffect((callback, deps) => {
+        const fetchData = async (callback, deps) => {
             const result = await axios.get(api+ "product/" + `${getIdParam}` ,
             ).catch(err => {
                 console.log(err)
@@ -26,8 +26,8 @@ export default function ProductDetail(props) {
             });
             // console.log(getComments.data)
             setLoading(false)
-            setData(result.data.data)
-            setComments(getComments.data.data)
+            // useCallback(() => setData(result.data.data), getIdParam)
+            // useCallback(() => setComments(getComments.data.data), getIdParam)
 
         };
         fetchData();
