@@ -25,7 +25,9 @@ export default function Product() {
     }, []);
 
     const convertUrlImage = (imageUrl) => {
-        return imageUrl.replace("uploads/","")
+        if (imageUrl) {
+            return imageUrl.replace("uploads/","")
+        }
     }
 
     return (

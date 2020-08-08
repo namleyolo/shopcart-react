@@ -27,7 +27,6 @@ export default function CategoriesDetail({match}) {
     return (
         <>{isLoading && <pre>LOADING...</pre>}
             {err && <pre>{err}</pre>}
-            <Menu/>
             <div className="container ">
                 <div className="row">
                     {products.map(value => (

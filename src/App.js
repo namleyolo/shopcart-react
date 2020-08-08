@@ -31,15 +31,17 @@ function App() {
           <Route exact path='/product/:id' component={ProductDetail}/>
           <Route exact path='/search' component={Search}/>
           <Route exact path='/categories/:id' component={CategoriesDetail}/>
+
           <div className="App">
-             <Header></Header>
+              <Menu/>
+
+              <Header></Header>
                  {/*<h1>{counter}</h1>*/}
                  {/*<button onClick={()=> dispatch({type : "INCREMENT" }) }> ++ </button>*/}
                   {/*<button onClick={()=> dispatch({type : "DECREMENT" }) }> -- </button>*/}
                <div className="container">
            <div className="row">
              <div id="main" className="col-lg-8 col-md-12 col-sm-12">
-                 <Menu/>
                  <Slide></Slide>
                  {/*<Test></Test>*/}
                  <Product></Product>
